@@ -5,7 +5,8 @@ if %errorlevel% NEQ 0 (
   pause
   exit
 )
-pip3 install --no-index --find-links=site-packages\ -r requirements.txt
+::pip3 install --no-index --find-links=site-packages\ -r requirements.txt
+pip3 install -r requirements.txt
 if %errorlevel%==0 (
   echo 安装完成！
 ) else (
