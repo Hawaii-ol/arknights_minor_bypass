@@ -1,11 +1,22 @@
 # Arknights minor bypass
-使用[mitmproxy](https://github.com/mitmproxy/mitmproxy)实现
+使用[mitmproxy](https://github.com/mitmproxy/mitmproxy)实现，告别一周三小时探监生活
 ## 使用方法
 1. 下载安装python3
-2. pip3 install -r requirments.txt
-3. 选择和你的服务器对应的脚本启动
-4. 在手机/模拟器上安装mitmproxy的系统证书（安卓7.0以上需要root）
+2. 运行安装必需组件.bat或手动执行pip3 install -r requirments.txt
+3. 选择和你的服务器对应的bat启动
+4. 在手机/模拟器上安装mitmproxy的系统证书（安卓7.0以上需要root），方法可以看mitmproxy的documentation
 5. 配置手机/模拟器代理为电脑IP的8888端口
 6. have fun!
 ## 注意事项
-B服需要通过APP授权方式登录，或手动配置access_token（可通过bilibili_login.py获取）
+### 关于B服登录
+B服有两种登录方式，APP授权登录和账号密码登录。
+#### APP授权登录
+需要在模拟器上同时安装B站APP和游戏APP，首先登录B站，然后启动游戏，会出现一键授权提示，按提示授权即可登录。
+#### 账号密码登录
+直接从游戏SDK端账号密码登录无法绕过防沉迷。登录失败后，会自动弹出登陆脚本，请在登陆脚本中输入账号密码，如有手机验证码请一并输入。脚本登录成功后，重新回到游戏并输入任意账号密码即可登录。
+### 关于风险
+一、本程序仅供学习交流使用，请勿将本程序用于任何非法用途，由此造成的封号等一系列不利后果与本人无关
+
+二、不建议在真机上使用，原因有二：
+1. 程序会无差别监听真机上的所有流量，某些使用了SSL pinning技术的APP可能出现证书无效、网页无法打开等问题
+2. root真机会产生一系列潜在的安全风险

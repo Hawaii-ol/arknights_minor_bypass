@@ -1,3 +1,5 @@
+import argparse
+import os
 import requests
 import time
 import webbrowser
@@ -14,6 +16,23 @@ def cli_get_user():
 def cli_get_captcha():
     captcha = input('请填写图片中的验证码：')
     return captcha
+
+def cli_get_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--mitm', action='store_true')
+    return parser
+
+def mitm_decorator(func):
+    def wrapper(*args, **kwargs):
+        print('您似乎正试图通过账号密码登录游戏，但显然失败了')
+        print('请在下面的脚本中填写您的账号密码以实现自动登录')
+        token_info = func(*args, **kwargs)
+        file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), access_token_file)
+        with open(file_path, 'w') as f:
+            f.write(token_info['access_token'])
+        print('设置成功！请重新回到游戏并在登录界面输入任意账号密码即可')
+        return token_info
+    return wrapper
 
 def sim_oauth_login():
     print('--- BiliBili 自动登录脚本 ---')
@@ -52,6 +71,7 @@ def sim_oauth_login():
     print('登陆成功，您的uid为%d，access_token为%s，refresh_token为%s' % (
         token_info['mid'], token_info['access_token'], token_info['refresh_token']))
     print('请妥善保管好您的用户凭据！')
+    return token_info
 
 def access_token_login(code):
     params = basic_login_params.copy()
@@ -69,5 +89,10 @@ def access_token_login(code):
     
     return rjson['data']
 
+
 if __name__ == '__main__':
+    parser = cli_get_parser()
+    args = parser.parse_args()
+    if args.mitm:
+        sim_oauth_login = mitm_decorator(sim_oauth_login)
     sim_oauth_login()

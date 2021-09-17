@@ -1,3 +1,6 @@
+from os import access
+
+
 appkey = '1d8b6e7d45233436'
 appSecret = '560c52ccd288fed045859ed18bffd973'
 login_appkey = 'bca7e84c2d947ac6'
@@ -9,6 +12,7 @@ api = {
     'myinfo' : 'https://app.bilibili.com/x/v2/account/myinfo',
     'access_token' : 'https://passport.bilibili.com/api/v2/oauth2/access_token',
     'app_3rd_auth' : 'https://passport.bilibili.com/api/oauth2/authorizeByApp',
+    'biligame_login': 'https://line1-sdk-center-login-sh.biligame.net/api/client/login',
     'biligame_session_renew' : 'https://line1-sdk-center-login-sh.biligame.net/api/client/session.renew',
     'biligame_user_info' : 'https://line1-sdk-center-login-sh.biligame.net/api/client/user.info',
 }
@@ -36,3 +40,4 @@ basic_login_params = {
     'platform' : 'android',
     's_locale' : 'zh_CN',
 }
+access_token_file = 'access_token'
