@@ -13,8 +13,11 @@ api = {
     'access_token' : 'https://passport.bilibili.com/api/v2/oauth2/access_token',
     'app_3rd_auth' : 'https://passport.bilibili.com/api/oauth2/authorizeByApp',
     'biligame_login': 'https://line1-sdk-center-login-sh.biligame.net/api/client/login',
+    'biligame_login_v3' : 'https://line1-sdk-center-login-sh.biligame.net/api/external/login/v3',
     'biligame_session_renew' : 'https://line1-sdk-center-login-sh.biligame.net/api/client/session.renew',
     'biligame_user_info' : 'https://line1-sdk-center-login-sh.biligame.net/api/client/user.info',
+    'biligame_token_login_v3' : 'https://line1-sdk-center-login-sh.biligame.net/api/external/user.token.oauth.login/v3',
+    'biligame_token_exchange_v3' : 'https://line1-sdk-center-login-sh.biligame.net/api/external/token.exchange/v3',
 }
 minor_guard_blacklist = [
     'line1-realtime-api.biligame.net',

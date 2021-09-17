@@ -24,13 +24,14 @@ def cli_get_parser():
 
 def mitm_decorator(func):
     def wrapper(*args, **kwargs):
-        print('您似乎正试图通过账号密码登录游戏，但显然失败了')
+        print('您似乎正试图通过账号密码登录游戏')
         print('请在下面的脚本中填写您的账号密码以实现自动登录')
         token_info = func(*args, **kwargs)
         file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), access_token_file)
         with open(file_path, 'w') as f:
             f.write(token_info['access_token'])
         print('设置成功！请重新回到游戏并在登录界面输入任意账号密码即可')
+        input()
         return token_info
     return wrapper
 

@@ -11,7 +11,7 @@ class HypergryphBypass:
             resjson = flow.response.json()
             print('Original response:')
             print(resjson)
-            if resjson['result'] != 0:
+            if resjson['result'] in [2, 3]:
                 resjson = {
                     'result' : 0,
                     'message' : 'OK',
