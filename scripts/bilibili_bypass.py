@@ -55,7 +55,7 @@ class BilibiliBypass:
                             self.disposable_access_token = f.read()
                 if self.disposable_access_token:
                     # since we are blocked from login,
-                    # we need to work around and obatin user info from Bilibili main site
+                    # we need to work around and obtain user info from Bilibili main site
                     self.fill_user_info(resjson, self.disposable_access_token)
                     print('Manipulated response:')
                     print(resjson)

@@ -2,7 +2,7 @@
 使用[mitmproxy](https://github.com/mitmproxy/mitmproxy)实现，告别一周三小时探监生活
 ## 使用方法
 1. 下载安装python3
-2. 运行安装必需组件.bat或手动执行pip3 install -r requirments.txt
+2. 运行安装必需组件.bat或手动执行pip3 install -r requirements.txt
 3. 选择和你的服务器对应的bat启动
 4. 在手机/模拟器上安装mitmproxy的系统证书（安卓7.0以上需要root），方法可以看mitmproxy的documentation
 5. 配置手机/模拟器代理为电脑IP的8888端口
@@ -20,3 +20,6 @@ B服有两种登录方式，APP授权登录和账号密码登录。
 二、不建议在真机上使用，原因有二：
 1. 程序会无差别监听真机上的所有流量，某些使用了SSL pinning技术的APP可能出现证书无效、网页无法打开等问题
 2. root真机会产生一系列潜在的安全风险
+
+## 支持
+本程序还在开发维护中，有遇到任何问题欢迎提issue，也欢迎pull request
