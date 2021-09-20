@@ -73,7 +73,7 @@ class BilibiliBypass:
             # Record app's access token
             if not self.disposable_access_token:
                 self.disposable_access_token = flow.request.urlencoded_form['access_token']
-        elif flow.request.url.startswith(api['biligame_token_login_v3']):
+        elif flow.request.url in (api['biligame_token_login_v3'], api['biligame_token_oauth_login_v3']):
             print('URL: ' + flow.request.url)
             resjson = flow.response.json()
             print('Original response:')

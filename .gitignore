@@ -2,3 +2,4 @@ __pycache__/
 site-packages/
 python-*.exe
 scripts/access_token
+scripts/test.py

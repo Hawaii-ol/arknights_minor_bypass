@@ -17,6 +17,7 @@ api = {
     'biligame_session_renew' : 'https://line1-sdk-center-login-sh.biligame.net/api/client/session.renew',
     'biligame_user_info' : 'https://line1-sdk-center-login-sh.biligame.net/api/client/user.info',
     'biligame_token_login_v3' : 'https://line1-sdk-center-login-sh.biligame.net/api/external/user.token.oauth.login/v3',
+    'biligame_token_oauth_login_v3' : 'https://line1-sdk-center-login-sh.biligame.net/api/external/user.token.oauth.login/v3',
     'biligame_token_exchange_v3' : 'https://line1-sdk-center-login-sh.biligame.net/api/external/token.exchange/v3',
 }
 minor_guard_blacklist = [
