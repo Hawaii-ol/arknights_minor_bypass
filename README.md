@@ -26,7 +26,7 @@
 1. 确保你的设备已经root，模拟器通常可以在设置中开启root
 2. 将前一步生成的mitmproxy-ca-cert.cer文件拷贝到设备中
 3. 点击这个证书文件即可安装，或从设置->安全->从SD卡安装选项选择证书文件并安装
-4. 已安装的证书是用户证书，安卓7.0以上无法使用，我们需要将它重新安装为系统证书。使用具有root权限的文件管理器（如MT管理器）将/data/misc/user/0/cacerts-added目录下的以.0结尾的文件拷贝到/system/etc/security/certs目录。
+4. 已安装的证书是用户证书，安卓7.0以上无法使用，我们需要将它重新安装为系统证书。使用具有root权限的文件管理器（如MT管理器）将/data/misc/user/0/cacerts-added目录下的以.0结尾的文件拷贝到/system/etc/security/cacerts目录。
 5. 重启设备，检查设置->安全->信任的凭据->系统列表中是否有mitmproxy
 #### iOS
 1. 先在Wi-Fi设置中开启代理，服务器填电脑IP，端口填8888
