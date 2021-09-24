@@ -21,6 +21,7 @@ class BilibiliBypass:
             os.remove(self.token_path)
     
     def fill_user_info(self, data, access_key):
+        print('Fetching myinfo with access_key=' + access_key)
         data['access_key'] = access_key
         data['expires'] = int(data['timestamp']) + 7776000
         myinfo = api_myinfo(access_key)
@@ -68,7 +69,9 @@ class BilibiliBypass:
                     if platform.system() == 'Windows':
                         subprocess.Popen(['python', script_path, '--mitm'],
                             creationflags=subprocess.CREATE_NEW_CONSOLE)
-                    # TODO add OS X support
+                    elif platform.system() == "Darwin":
+                        os.system(r"""osascript -e 'tell application "Terminal" to do script "python3 \"%s\""'"""
+                            % script_path)
         elif flow.request.url.startswith(api['app_3rd_auth']):
             # Record app's access token
             # Make sure we always use Bilibili app's token rather than
