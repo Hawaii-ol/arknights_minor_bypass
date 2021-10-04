@@ -1,7 +1,8 @@
 # Arknights minor bypass
 使用[mitmproxy](https://github.com/mitmproxy/mitmproxy)实现，告别一周三小时探监生活
 ## 支持的服务器
-官服，B服
+官服，~~B服~~
+**注意：由于最近B站回调接口的升级，目前的破解登录方式已不再有效。已登录的账号9点以后理论上仍可继续游戏，不受影响。**
 ## 支持的系统
 安卓，ios
 ## 使用方法
